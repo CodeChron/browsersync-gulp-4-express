@@ -57,7 +57,5 @@ gulp.task('dev', gulp.parallel('dev:styles', 'dev:views'));
 gulp.task('watch', gulp.parallel('watch:styles', 'watch:views'));
 
 //DEFAULT
-gulp.task('default', gulp.series('clean', 'dev', 'server',
-	gulp.parallel('watch','browser-sync')
-	));
+gulp.task('default', gulp.series('clean', 'dev', 'server', gulp.parallel('watch','browser-sync')));
 
