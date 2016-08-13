@@ -1,0 +1,31 @@
+{
+  "name": "browsersync-gulp-4-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeChron/browsersync-gulp-4-express.git"
+  },
+  "keywords": [],
+  "author": "Anders Ramsay (http://anders.co)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeChron/browsersync-gulp-4-express/issues"
+  },
+  "homepage": "https://github.com/CodeChron/browsersync-gulp-4-express#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-nodemon": "^2.1.0"
+  },
+  "dependencies": {
+    "ejs": "^2.5.1",
+    "express": "^4.14.0"
+  }
+}
