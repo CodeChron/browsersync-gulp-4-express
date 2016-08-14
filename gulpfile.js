@@ -18,8 +18,9 @@ gulp.task('dev:views', function() {
     //Process views
     .pipe(gulp.dest(config.paths.views.dist))
 })
-gulp.task('watch:views', function() {
+gulp.task('watch:views', function(done) {
   gulp.watch(config.paths.views.src, gulp.series('dev:views'));
+  done();
 })
 
 //STYLES
@@ -29,8 +30,9 @@ gulp.task('dev:styles', function() {
     //Process styles
     .pipe(gulp.dest(config.paths.styles.dist))
 })
-gulp.task('watch:styles', function() {
+gulp.task('watch:styles', function(done) {
   gulp.watch(config.paths.styles.src, gulp.series('dev:styles'));
+  done();
 })
 
 //SERVER
@@ -46,9 +48,12 @@ gulp.task('server', function (cb) {
 });
 
 // BROWSER-SYNC
-gulp.task('browser-sync', function() {
-  browserSync.init(config.plugins.browserSync);
-});
+
+function browserSyncInit(done) {
+  browserSync.init(config.plugins.browserSync)
+  done();
+}
+gulp.task('browser-sync', browserSyncInit);
 
 //DEV
 gulp.task('dev', gulp.parallel('dev:styles', 'dev:views'));
